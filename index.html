@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nishtha Sahani – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0A0E1A;
+    --surface: #111827;
+    --card: #141C2E;
+    --accent: #3ECFCF;
+    --accent2: #7B61FF;
+    --accent3: #FF6B6B;
+    --text: #E8EDF5;
+    --muted: #8896B0;
+    --border: rgba(62,207,207,0.15);
+    --glow: rgba(62,207,207,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5;}
+  .grid-bg{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(62,207,207,0.04) 1px, transparent 1px),linear-gradient(90deg, rgba(62,207,207,0.04) 1px, transparent 1px);background-size:60px 60px;pointer-events:none;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(10,14,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--accent);}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;font-family:'DM Mono',monospace;letter-spacing:.04em;transition:color .2s;}
+  .nav-links a::before{content:'// ';}
+  .nav-links a:hover{color:var(--accent);}
+  section{position:relative;z-index:1;}
+  #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px;max-width:1100px;margin:0 auto;}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(62,207,207,0.08);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-family:'DM Mono',monospace;font-size:.78rem;color:var(--accent);letter-spacing:.08em;margin-bottom:32px;width:fit-content;}
+  .hero-tag span{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+  h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3rem,8vw,6rem);line-height:.95;letter-spacing:-.04em;margin-bottom:24px;}
+  h1 .accent{color:var(--accent);}
+  .hero-sub{font-size:1.05rem;color:var(--muted);max-width:580px;margin-bottom:48px;line-height:1.7;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-family:'DM Mono',monospace;font-size:.85rem;text-decoration:none;transition:all .25s;cursor:pointer;border:none;}
+  .btn-primary{background:var(--accent);color:#0A0E1A;font-weight:500;}
+  .btn-primary:hover{background:#52e0e0;transform:translateY(-2px);box-shadow:0 8px 24px rgba(62,207,207,0.3);}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+  .hero-stats{display:flex;gap:48px;margin-top:72px;padding-top:48px;border-top:1px solid var(--border);flex-wrap:wrap;}
+  .stat-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);}
+  .stat-label{font-size:.82rem;color:var(--muted);font-family:'DM Mono',monospace;margin-top:4px;}
+  .section-wrap{max-width:1100px;margin:0 auto;padding:100px 60px;}
+  .section-label{font-family:'DM Mono',monospace;font-size:.78rem;color:var(--accent);letter-spacing:.12em;margin-bottom:12px;}
+  .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.03em;margin-bottom:60px;line-height:1;}
+  #skills{background:var(--surface);}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:all .3s;position:relative;overflow:hidden;}
+  .skill-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0 0, var(--glow), transparent 70%);opacity:0;transition:opacity .3s;}
+  .skill-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .skill-card:hover::before{opacity:1;}
+  .skill-cat{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);letter-spacing:.1em;margin-bottom:12px;}
+  .skill-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:14px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:rgba(62,207,207,0.08);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);}
+  .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media(max-width:720px){.projects-grid{grid-template-columns:1fr;}}
+  .project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px;transition:all .3s;position:relative;overflow:hidden;}
+  .project-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+  .project-card:hover{transform:translateY(-6px);border-color:rgba(62,207,207,0.3);box-shadow:0 24px 48px rgba(0,0,0,0.4);}
+  .project-card:hover::after{transform:scaleX(1);}
+  .project-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:100px;padding:4px 12px;width:fit-content;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--accent3);}
+  .project-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;line-height:1.1;}
+  .project-tagline{font-size:.84rem;color:var(--accent);font-family:'DM Mono',monospace;font-style:italic;}
+  .divider{height:1px;background:var(--border);}
+  .project-desc{color:var(--muted);font-size:.9rem;line-height:1.7;}
+  .project-highlights{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .project-highlights li{font-size:.86rem;color:var(--muted);padding-left:18px;position:relative;line-height:1.5;}
+  .project-highlights li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.8rem;top:1px;}
+  .project-metrics{display:flex;flex-wrap:wrap;gap:8px;}
+  .metric{background:rgba(123,97,255,0.08);border:1px solid rgba(123,97,255,0.2);border-radius:6px;padding:5px 12px;font-family:'DM Mono',monospace;font-size:.7rem;color:#A78BFA;}
+  .project-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px;}
+  #achievements{background:var(--surface);}
+  .ach-group-label{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--accent);letter-spacing:.04em;margin-bottom:16px;margin-top:48px;display:flex;align-items:center;gap:12px;}
+  .ach-group-label:first-of-type{margin-top:0;}
+  .ach-group-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .ach-list{display:flex;flex-direction:column;gap:14px;}
+  .ach-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 30px;display:flex;align-items:flex-start;gap:18px;transition:all .3s;}
+  .ach-card:hover{border-color:var(--accent);transform:translateX(6px);}
+  .ach-icon{width:44px;height:44px;border-radius:10px;background:rgba(62,207,207,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+  .ach-body{flex:1;}
+  .ach-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:3px;}
+  .ach-org{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);margin-bottom:10px;}
+  .ach-bullets{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .ach-bullets li{font-size:.84rem;color:var(--muted);padding-left:14px;position:relative;line-height:1.5;}
+  .ach-bullets li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:bold;}
+  .team-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+  .team-tag{background:rgba(62,207,207,0.06);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);}
+  #about{border-top:1px solid var(--border);}
+  .hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+  .hl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;transition:all .3s;}
+  .hl-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+  .hl-icon{font-size:2rem;margin-bottom:12px;}
+  .hl-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:8px;}
+  .hl-desc{color:var(--muted);font-size:.84rem;line-height:1.6;}
+  #contact{background:linear-gradient(135deg,rgba(62,207,207,0.05),rgba(123,97,255,0.05));border-top:1px solid var(--border);}
+  .contact-inner{text-align:center;max-width:600px;margin:0 auto;}
+  .contact-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-.04em;margin-bottom:20px;}
+  .contact-sub{color:var(--muted);margin-bottom:48px;font-size:1rem;}
+  .contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .contact-link{display:flex;align-items:center;gap:10px;padding:14px 24px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);text-decoration:none;font-family:'DM Mono',monospace;font-size:.82rem;transition:all .25s;}
+  .contact-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
+  footer{text-align:center;padding:32px;font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border);position:relative;z-index:1;}
+  .fade-up{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.22,1,.36,1);}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:768px){nav{padding:16px 24px;} .nav-links{gap:18px;} #hero,.section-wrap{padding-left:24px;padding-right:24px;} .hero-stats{gap:28px;}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav>
+  <div class="nav-logo">NS.</div>
+  <div class="nav-links">
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#achievements">achievements</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-tag"><span></span>Open to Summer 2027 Internships</div>
+  <h1>Nishtha<br>Sahani<span class="accent">.</span></h1>
+  <p class="hero-sub">Third-year CS (AI) engineer building full-stack platforms and AI-powered systems. Hackathon competitor · FastAPI · Python · React · Node.js · Firebase</p>
+  <div class="hero-ctas">
+    <a href="https://github.com/nishtha-sys" target="_blank" class="btn btn-primary">↗ GitHub</a>
+    <a href="https://www.linkedin.com/in/nishtha-sahani-2209aa236" target="_blank" class="btn btn-outline">LinkedIn</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">2</div><div class="stat-label">Projects Shipped</div></div>
+    <div><div class="stat-num">1</div><div class="stat-label">Hackathon</div></div>
+    <div><div class="stat-num">3+</div><div class="stat-label">Certifications</div></div>
+    <div><div class="stat-num">2027</div><div class="stat-label">Graduating</div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-label">// 001 SKILLS</div>
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card fade-up"><div class="skill-cat">LANGUAGES</div><div class="skill-name">Core Languages</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-cat">BACKEND</div><div class="skill-name">Server & APIs</div><div class="skill-tags"><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">REST APIs</span><span class="tag">Firebase</span><span class="tag">SQL</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-cat">FRONTEND</div><div class="skill-name">UI Development</div><div class="skill-tags"><span class="tag">React</span><span class="tag">Streamlit</span><span class="tag">Responsive Design</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-cat">AI & NLP</div><div class="skill-name">Intelligence Layer</div><div class="skill-tags"><span class="tag">Rule-based NLP</span><span class="tag">Heuristic AI</span><span class="tag">AI Summarization</span><span class="tag">ML Basics</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-cat">CLOUD & TOOLS</div><div class="skill-name">DevOps & Platforms</div><div class="skill-tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Firebase</span><span class="tag">Oracle OCI</span><span class="tag">Streamlit Cloud</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-cat">CS FUNDAMENTALS</div><div class="skill-name">Core CS</div><div class="skill-tags"><span class="tag">DSA</span><span class="tag">Modular Architecture</span><span class="tag">System Design</span><span class="tag">OOP</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-wrap">
+    <div class="section-label">// 002 PROJECTS</div>
+    <h2 class="section-title">What I've Built</h2>
+    <div class="projects-grid">
+
+      <div class="project-card fade-up">
+        <div class="project-badge">🤖 AI-Powered System</div>
+        <div class="project-title">HRVerse</div>
+        <div class="project-tagline">AI-powered Internal HR Assistant</div>
+        <div class="divider"></div>
+        <p class="project-desc">A smart HR chatbot automating employee queries on leave policies, benefits, insurance, and company rules — cutting HR response overhead significantly.</p>
+        <ul class="project-highlights">
+          <li>Rule-based + heuristic NLP pipeline for accurate intent detection across 5+ query categories</li>
+          <li>FastAPI backend serving structured policy responses with sub-200ms latency</li>
+          <li>Responsive single-page chat UI in HTML/CSS/JS — zero external UI frameworks</li>
+          <li>Handles both structured & unstructured data with document upload & parsing capability</li>
+          <li>Modular architecture — designed for seamless upgrade to ML/LLM-based systems</li>
+        </ul>
+        <div class="project-metrics">
+          <span class="metric">~60% faster responses</span>
+          <span class="metric">sub-200ms API</span>
+          <span class="metric">5+ query types</span>
+        </div>
+        <div class="project-tech">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">NLP</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-up">
+        <div class="project-badge">🎓 Full-Stack Platform</div>
+        <div class="project-title">CampusConnect</div>
+        <div class="project-tagline">Smart Campus Utility Platform</div>
+        <div class="divider"></div>
+        <p class="project-desc">A centralized campus platform unifying lost & found, notes sharing, and student collaboration into one seamless experience built for real-world deployment.</p>
+        <ul class="project-highlights">
+          <li>AI-powered note summarization with robust fallback mechanism for uninterrupted UX</li>
+          <li>Real-time data sync via Firebase — handles concurrent users without conflicts</li>
+          <li>Lost & found module with item search, status tracking, and notifications</li>
+          <li>Service-based backend architecture enabling independent scaling of each module</li>
+          <li>Accessibility and usability first — designed for real campus student workflows</li>
+        </ul>
+        <div class="project-metrics">
+          <span class="metric">AI summarization</span>
+          <span class="metric">Real-time sync</span>
+          <span class="metric">Multi-module</span>
+        </div>
+        <div class="project-tech">
+          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Firebase</span><span class="tag">AI/NLP</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="section-wrap">
+    <div class="section-label">// 003 ACHIEVEMENTS</div>
+    <h2 class="section-title">Recognition</h2>
+
+    <div class="ach-group-label">🚀 Hackathons & Competitions</div>
+    <div class="ach-list">
+      <div class="ach-card fade-up">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-body">
+          <div class="ach-title">INNVEDX Hackathon — via Unstop</div>
+          <div class="ach-org">Babu Banarasi Das University · Guided by Tech Lead Sarthak Singh</div>
+          <ul class="ach-bullets">
+            <li>Competed in an innovation-driven challenge focused on real-world problem solving</li>
+            <li>Delivered rapid prototyping under time pressure — problem analysis to working product</li>
+            <li>Hands-on exposure to full development workflows, ideation, and team collaboration</li>
+          </ul>
+          <div class="team-row">
+            <span class="team-tag">👤 Nishtha Sahani</span>
+            <span class="team-tag">Sahil Gazi</span>
+            <span class="team-tag">Jayati Mahato</span>
+            <span class="team-tag">Priyanshu Kumar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ach-group-label">🎓 Certifications & Learning</div>
+    <div class="ach-list">
+      <div class="ach-card fade-up">
+        <div class="ach-icon">☁️</div>
+        <div class="ach-body">
+          <div class="ach-title">Oracle OCI AI Professional Training</div>
+          <div class="ach-org">Oracle Cloud Infrastructure · Currently Pursuing</div>
+          <ul class="ach-bullets">
+            <li>AI model deployment and cloud infrastructure concepts</li>
+            <li>Real-world enterprise AI application design</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ach-card fade-up">
+        <div class="ach-icon">💡</div>
+        <div class="ach-body">
+          <div class="ach-title">IBM AI / Tech Domain Certification</div>
+          <div class="ach-org">IBM</div>
+          <ul class="ach-bullets">
+            <li>Machine learning basics, AI workflows, and industry use cases</li>
+            <li>Applied AI concepts and foundational technical training</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ach-card fade-up">
+        <div class="ach-icon">🤖</div>
+        <div class="ach-body">
+          <div class="ach-title">Yuva AI for All Program</div>
+          <div class="ach-org">Tata Consultancy Services & NASSCOM Foundation</div>
+          <ul class="ach-bullets">
+            <li>Emerging AI tools, practical implementation approaches</li>
+            <li>Industry-relevant AI trends and responsible AI practices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-label">// 004 ABOUT</div>
+    <h2 class="section-title">Key Highlights</h2>
+    <div class="hl-grid">
+      <div class="hl-card fade-up"><div class="hl-icon">🧠</div><div class="hl-title">AI + Full-Stack</div><div class="hl-desc">Building at the intersection of AI engineering and modern full-stack development — not just theory.</div></div>
+      <div class="hl-card fade-up"><div class="hl-icon">⚡</div><div class="hl-title">Real-World Projects</div><div class="hl-desc">Every project is designed for actual deployment and real user workflows — not just coursework demos.</div></div>
+      <div class="hl-card fade-up"><div class="hl-icon">🏆</div><div class="hl-title">Hackathon Proven</div><div class="hl-desc">Competed and delivered under time pressure. Strong in problem analysis, prototyping, and team execution.</div></div>
+      <div class="hl-card fade-up"><div class="hl-icon">📈</div><div class="hl-title">Industry Ready</div><div class="hl-desc">Continuously building technical skills, cloud expertise, and communication for 2027 internship readiness.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-wrap">
+    <div class="contact-inner">
+      <div class="section-label" style="text-align:center">// 005 CONTACT</div>
+      <div class="contact-title">Let's Connect</div>
+      <p class="contact-sub">Open to Summer 2027 software engineering internship opportunities. Always happy to talk tech.</p>
+      <div class="contact-links">
+        <a href="mailto:nishthasahani7@gmail.com" class="contact-link"><span>✉</span> Email Me</a>
+        <a href="https://github.com/nishtha-sys" target="_blank" class="contact-link"><span>⌥</span> GitHub</a>
+        <a href="https://www.linkedin.com/in/nishtha-sahani-2209aa236" target="_blank" class="contact-link"><span>⟡</span> LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Built with intention · Nishtha Sahani · 2026</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
