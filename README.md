@@ -45,6 +45,6 @@ Deployed on **Vercel** via GitHub integration. Every push to `main` auto-deploys
 
 ## About Me
 
-3rd-year B.Tech CSE (AI) student at BBDU Lucknow · Open to Summer 2027 SWE / AI Engineering internships
+3rd-year B.Tech CSE (AI) student at BBDU Lucknow · Open to FSD / SWE / AI Engineering internships
 
 📧 nishthasahani7@gmail.com · [LinkedIn](https://www.linkedin.com/in/nishtha-sahani-2209aa236) · [GitHub](https://github.com/nishtha-sys)
