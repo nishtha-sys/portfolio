@@ -2,7 +2,7 @@
 
 > **Live:** [portfolio-nishthasahani.vercel.app](https://portfolio-nishthasahani.vercel.app)
 
-Personal developer portfolio built with React — showcasing full-stack AI projects, hackathon wins, and my journey as a CS (AI) student targeting Summer 2027 internships.
+Personal developer portfolio built with React — showcasing full-stack AI projects, hackathon wins, and my journey as a CS (AI) student.
 
 ---
 
