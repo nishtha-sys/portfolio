@@ -12,7 +12,7 @@ Personal developer portfolio built with React — showcasing full-stack AI proje
 - **Tech Stack** — Python · JavaScript · React · FastAPI · Flask · Firebase · Groq API · Leaflet · Vercel · Render
 - **Achievements** — IBM Bob Dev Day 2026, first place in INNVEDX Hackathon, Oracle OCI AI Training
 - **GitHub Activity** — Live stats panel (340+ commits, 12 public repos, 6 languages)
-- **Contact + Resume** — Direct email, LinkedIn, and downloadable resume PDF
+- **Contact** — Direct email and LinkedIn
 
 ---
 
