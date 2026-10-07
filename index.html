@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Nishtha Sahani  CS (AI) · Full-Stack & GenAI Developer</title>
-<meta name="description" content="Nishtha Sahani  CS (AI), BBDU Lucknow. Building full-stack platforms and AI-powered systems. Open to Summer 2027 internships."/>
+<title>Nishtha Sahani  AI Engineer · CS (AI)</title>
+<meta name="description" content="Nishtha Sahani  CS (AI), BBDU Lucknow. AI Engineer with hands-on experience in Python, ML and NLP. Open to Summer 2027 internships."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
@@ -266,6 +266,15 @@ footer span{color:var(--accent);}
   .hero-ctas{gap:8px;}
   .btn{padding:11px 18px;font-size:.76rem;}
 }
+
+/* ── POLISH ── */
+.exp-card{border-left:2px solid rgba(0,212,200,0.22);transition:border-color .25s,transform .25s,box-shadow .25s;}
+.exp-card:hover{border-left-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.28);}
+.project-card{transition:transform .25s,border-color .25s,box-shadow .25s;}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(0,212,200,0.32);box-shadow:0 16px 38px rgba(0,0,0,.3);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;}
+::selection{background:rgba(0,212,200,.28);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 </style>
 </head>
 <body>
@@ -309,13 +318,12 @@ footer span{color:var(--accent);}
     <span class="name-line">Sahani<span class="accent-dot">.</span></span>
   </h1>
   <div class="hero-role">
-    <em>CS (AI)</em>
     <span class="hero-role-sep">·</span>
     Babu Banarasi Das University, Lucknow
     <span class="hero-role-sep">·</span>
     Final Year · 2023–2027
   </div>
-  <p class="hero-sub">GenAI Engineer & Full-Stack Developer. Shipping production-grade AI-powered applications end-to-end. Solo-built an LLM tool at IBM Bob Dev Day in under 48 hours. 1st-place hackathon winner.</p>
+  <p class="hero-sub">AI Engineer with hands-on experience in Python, machine learning, NLP and LLM-powered applications. Solo-built an LLM tool at IBM Bob Dev Day in under 48 hours. 1st-place hackathon winner.</p>
   <div class="learning-strip">
     <span class="learning-label">CURRENTLY LEARNING →</span>
     <span class="ltag">LangChain</span>
@@ -344,6 +352,28 @@ footer span{color:var(--accent);}
 
       <div class="exp-card fade-up">
         <div>
+          <div class="exp-role">Data Analytics with AI Intern</div>
+          <div class="exp-company">AICTE × IBM SkillsBuild</div>
+          <div class="exp-badge">● Currently Active</div>
+        </div>
+        <div>
+          <div class="exp-date">Aug 2026 – Present</div>
+          <div class="exp-type">Remote</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Selected for the 6-week Virtual IBM SkillsBuild Data Analytics with AI Internship 2026, delivered in collaboration with AICTE and BharatCares</li>
+          <li>Hands-on work applying data analysis and AI techniques to real datasets under an industry-designed curriculum</li>
+        </ul>
+        <div class="exp-tag-row">
+          <span class="exp-tag">Data Analytics</span>
+          <span class="exp-tag">AI</span>
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">Pandas</span>
+        </div>
+      </div>
+
+      <div class="exp-card fade-up">
+        <div>
           <div class="exp-role">Trainee — Pragati: Path to Future (Cohort 9)</div>
           <div class="exp-company">Infosys Springboard</div>
           <div class="exp-badge">● Currently Active</div>
@@ -361,29 +391,6 @@ footer span{color:var(--accent);}
           <span class="exp-tag">NLP</span>
           <span class="exp-tag">Cloud Computing</span>
           <span class="exp-tag">ML Pipelines</span>
-        </div>
-      </div>
-
-      <div class="exp-card fade-up">
-        <div>
-          <div class="exp-role">Data Science & AI Trainee</div>
-          <div class="exp-company">GRAStech (GRAS Education & Training Services Pvt. Ltd.)</div>
-        </div>
-        <div>
-          <div class="exp-date">Jun 2026 – Jul 2026</div>
-          <div class="exp-type">On-site · Lucknow</div>
-        </div>
-        <ul class="exp-bullets">
-          <li>Completed a 90-hour industry-oriented training program covering the full ML/DL/NLP pipeline end-to-end</li>
-          <li>Delivered and deployed a capstone project using Streamlit/Flask with the full development workflow tracked on GitHub</li>
-        </ul>
-        <div class="exp-tag-row">
-          <span class="exp-tag">Machine Learning</span>
-          <span class="exp-tag">Deep Learning</span>
-          <span class="exp-tag">NLP</span>
-          <span class="exp-tag">Flask</span>
-          <span class="exp-tag">Streamlit</span>
-          <span class="exp-tag">GitHub</span>
         </div>
       </div>
 
@@ -467,7 +474,28 @@ footer span{color:var(--accent);}
     <!-- ── FEATURED (resume projects first) ── -->
     <div class="featured-grid">
 
-      <!-- ① AI Code Explainer — WIDE -->
+      <!-- ① HRVerse — WIDE -->
+      <div class="project-card project-card-wide fade-up">
+        <div class="project-card-header">
+          <span class="badge b-ai">🤖 AI System</span>
+          <div class="project-links">
+            <a href="https://github.com/nishtha-sys/HRVerse" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
+            <a href="https://hrverse-je3k.onrender.com/" target="_blank" rel="noopener" class="plb">↗ Live App</a>
+          </div>
+        </div>
+        <div class="project-title">HRVerse</div>
+        <div class="project-tagline">AI-powered Internal HR Assistant</div>
+        <div class="divider"></div>
+        <p class="project-desc">Smart HR chatbot automating employee queries on leave, benefits, and company rules — with a modular architecture designed for LLM upgrade.</p>
+        <ul class="project-highlights">
+          <li>Iterated through 3 model versions — substring matching (39.1%) → NLP preprocessing (44.2%) → ML classifier — reaching 93.6% intent accuracy on 156 unseen questions across 19 intents</li>
+          <li>NLP pipeline with typo tolerance and fuzzy matching across 6+ HR categories; ~2ms average response; voice input, read-aloud output, light/dark UI</li>
+          <li>Modular NLP / ML / API / UI layers — designed for drop-in LLM swap without refactoring</li>
+        </ul>
+        <div class="project-tech"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">NLP</span><span class="tag">Scikit-learn</span><span class="tag">JavaScript</span></div>
+      </div>
+
+      <!-- ② AI Code Explainer — WIDE -->
       <div class="project-card project-card-wide fade-up">
         <div class="project-card-header">
           <span class="badge b-hackathon">🏆 IBM Bob Dev Day Hackathon 2026 · Solo</span>
@@ -500,7 +528,7 @@ footer span{color:var(--accent);}
         <div class="project-card-header">
           <span class="badge b-fullstack">🎓 Full-Stack · Hackathon Build</span>
           <div class="project-links">
-            <a href="https://github.com/nishtha-sys" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
+            <a href="https://github.com/nishtha-sys/campusconnect" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
             <a href="https://campusconnect-black.vercel.app" target="_blank" rel="noopener" class="plb">↗ Live</a>
           </div>
         </div>
@@ -527,8 +555,8 @@ footer span{color:var(--accent);}
         <div class="project-card-header">
           <span class="badge b-ml">📊 ML Web App</span>
           <div class="project-links">
-            <a href="https://github.com/nishtha-sys" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
-            <a href="https://github.com/nishtha-sys" target="_blank" rel="noopener" class="plb">↗ Live App</a>
+            <a href="https://github.com/nishtha-sys/sms-spam-classifier" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
+            <a href="https://nishtha-sms-spam-classifier.streamlit.app/" target="_blank" rel="noopener" class="plb">↗ Live App</a>
           </div>
         </div>
         <div class="project-title">SMS Spam Classifier</div>
@@ -559,47 +587,6 @@ footer span{color:var(--accent);}
     <!-- ── MORE PROJECTS (collapsible) ── -->
     <div class="more-projects" id="moreProjects">
       <div class="more-grid">
-
-        <!-- HRVerse -->
-        <div class="project-card fade-up">
-          <div class="project-card-header">
-            <span class="badge b-ai">🤖 AI System</span>
-            <div class="project-links">
-              <a href="https://github.com/nishtha-sys" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
-              <button class="plb" style="border-color:rgba(245,158,11,0.2);color:rgba(245,158,11,0.5);" onclick="showToast()">⏳ Soon</button>
-            </div>
-          </div>
-          <div class="project-title">HRVerse</div>
-          <div class="project-tagline">AI-powered Internal HR Assistant</div>
-          <div class="divider"></div>
-          <p class="project-desc">Smart HR chatbot automating employee queries on leave, benefits, and company rules — with a modular architecture designed for LLM upgrade.</p>
-          <ul class="project-highlights">
-            <li>Rule-based + heuristic NLP pipeline across 5+ query categories; sub-200ms FastAPI backend</li>
-            <li>Zero-framework chat UI in vanilla JS — lean, fast, accessible</li>
-            <li>Modular architecture — designed for drop-in LLM swap without refactoring</li>
-          </ul>
-          <div class="project-tech"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">NLP</span><span class="tag">JavaScript</span></div>
-        </div>
-
-        <!-- Smart Expense Tracker -->
-        <div class="project-card fade-up">
-          <div class="project-card-header">
-            <span class="badge b-frontend">🖥 Frontend</span>
-            <div class="project-links">
-              <a href="https://github.com/nishtha-sys" target="_blank" rel="noopener" class="plb">⌥ GitHub</a>
-              <button class="plb" style="border-color:rgba(245,158,11,0.2);color:rgba(245,158,11,0.5);" onclick="showToast()">⏳ Soon</button>
-            </div>
-          </div>
-          <div class="project-title">Smart Expense Tracker</div>
-          <div class="project-tagline">Interactive Financial Dashboard</div>
-          <div class="divider"></div>
-          <p class="project-desc">Real-time expense categorization, Recharts visualizations, and LocalStorage persistence — zero backend, full clarity.</p>
-          <ul class="project-highlights">
-            <li>Full CRUD with multi-sort; Pie, Bar & Line charts via Recharts</li>
-            <li>LocalStorage persistence — data survives refreshes without any server</li>
-          </ul>
-          <div class="project-tech"><span class="tag">React.js</span><span class="tag">Recharts</span><span class="tag">LocalStorage</span></div>
-        </div>
 
         <!-- Vedic Financial -->
         <div class="project-card fade-up">
